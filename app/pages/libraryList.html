@@ -1,0 +1,104 @@
+<!-- Contributor: Rishon -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library List</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div class="wrapper">
+      <!-- Header -->
+      <header>
+        <div class="logo">
+          <i class="fas fa-book-reader"></i>
+          <h1>Library Explorer</h1>
+        </div>
+      </header>
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav>
+          <ul>
+            <li>
+              <a href="libraryList.html" class="active"
+                ><i class="fas fa-list"></i> Library List</a
+              >
+            </li>
+            <li>
+              <a href="libraryMap.html"
+                ><i class="fas fa-map-marked-alt"></i> Library Map</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- Main Content -->
+      <main>
+        <h1>Library List</h1>
+        <!-- Search Box -->
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search libraries..."
+            class="search-input"
+          />
+          <i class="fas fa-search search-icon"></i>
+        </div>
+        <!-- Filter Options -->
+        <div class="filters">
+          <label for="townFilter">Filter by Town:</label>
+          <select id="townFilter">
+            <option value="">All Towns</option>
+          </select>
+          <!-- Clear Filter -->
+          <button id="clearFilter">
+            <i class="fas fa-times"></i> Clear Filter
+          </button>
+          <!-- Find Nearest Library -->
+          <button id="findNearest">
+            <i class="fas fa-location-arrow"></i> Find Nearest
+          </button>
+        </div>
+        <!-- Table List -->
+        <div class="table-container">
+          <table id="libraryTable">
+            <thead>
+              <tr>
+                <th>
+                  <button class="sort-btn" data-sort="name">
+                    Name <i class="fas fa-sort"></i>
+                  </button>
+                </th>
+                <th>Street</th>
+                <th>
+                  <button class="sort-btn" data-sort="town">
+                    Town <i class="fas fa-sort"></i>
+                  </button>
+                </th>
+                <th>POSTCODE</th>
+                <th>Telephone</th>
+                <th>Email</th>
+                <th>URL</th>
+                <th>
+                  <button class="sort-btn" data-sort="distance">
+                    Distance <i class="fas fa-sort"></i>
+                  </button>
+                </th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+    <script type="module" src="../js/libraryList.js"></script>
+  </body>
+</html>

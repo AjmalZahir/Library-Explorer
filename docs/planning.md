@@ -3,18 +3,31 @@
 ## Business Case
 
 ### Problem statement
-TODO: Replace the example text like this with text that describes your project. What is the problem to be addressed?
+
+There is no simple way for users to easily access and explore public library data in Bristol. This project aims to make this data accessible via a user-friendly web application.
 
 ### Business benefits
-TODO: List high-level benefits that this product will provide.
+
+- Easy access to library data for users.
+- Interactive map and table views for better navigation.
+- Encourages engagement with local public resources.
 
 ### Options Considered
-TODO: What are some other customer options or leading products that address the same needs?
+
+- Use of third-party apps that show basic data, but these lack customization.
+- Building a more complex system with additional datasets from Bristol Open Data.
 
 ### Expected Risks
-TODO: What are the main risks of this project?
+
+- Data inconsistencies in the API.
+- API rate limits affecting performance.
+- Ensuring compatibility across different browsers.
 
 ## Project Scope
-TODO: Scope of the System of Interest. Include a bullet list of things from your context diagram that are in scope.
 
-![Insert your Context Diagram Here](images/context.png)
+- Display library data such as names, locations, and facilities.
+- Show data on an interactive map and in a table format.
+- Use JavaScript to fetch data from the Bristol Open Data API.
+- Basic validation of the displayed data.
+
+![Library Explorer Context Diagram Here](images/context.png)

@@ -1,0 +1,77 @@
+<!-- Contributor: M Z M Ajmal / m67-mohamedzah -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>api.js Tests</title>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/qunit/qunit-2.20.1.css"
+    />
+  </head>
+  <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.20.1.js"></script>
+    <script type="module">
+      import { fetchLibraries } from "../app/js/api.js";
+
+      QUnit.module("api.js", function () {
+        QUnit.test("fetchLibraries - successful fetch", function (assert) {
+          // Arrange
+          const mockFetch = (url) => {
+            assert.equal(
+              url,
+              "https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_leisure_and_culture/MapServer/0/query?outFields=*&where=1%3D1&f=geojson",
+              "fetchLibraries uses the correct URL"
+            );
+
+            return Promise.resolve({
+              json: () => Promise.resolve({ features: [{}] }),
+            });
+          };
+          const originalFetch = window.fetch;
+          window.fetch = mockFetch;
+
+          // Act
+          return fetchLibraries()
+            .then((data) => {
+              // Assert
+              assert.ok(Array.isArray(data), "fetchLibraries returns an array");
+              assert.equal(
+                data.length,
+                1,
+                "fetchLibraries returns the correct number of features"
+              );
+            })
+            .finally(() => {
+              window.fetch = originalFetch; // Restore original fetch
+            });
+        });
+
+        QUnit.test("fetchLibraries - failed fetch", function (assert) {
+          // Arrange
+          const mockFetch = () => {
+            return Promise.reject(new Error("Fetch error"));
+          };
+          const originalFetch = window.fetch;
+          window.fetch = mockFetch;
+          assert.expect(1); // Expect one assertion
+
+          // Act
+          return fetchLibraries()
+            .catch((error) => {
+              // Assert
+              assert.equal(
+                error.message,
+                "Fetch error",
+                "fetchLibraries rejects with an error"
+              );
+            })
+            .finally(() => {
+              window.fetch = originalFetch; // Restore original fetch
+            });
+        });
+      });
+    </script>
+  </body>
+</html>

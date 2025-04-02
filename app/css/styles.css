@@ -1,0 +1,365 @@
+/* Reset and base styles */
+// Contributor : M Z M Ajmal and Rishon
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Wrapper for the entire layout */
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main";
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* Using CSS Grid for main layout structure allows for 
+easy reordering of elements in responsive views without changing HTML */
+
+/* Header styles */
+header {
+  grid-area: header;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  padding: 1.2rem;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+header .logo i {
+  font-size: 2rem;
+}
+
+header .logo h1 {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Sidebar styles */
+.sidebar {
+  grid-area: sidebar;
+  background-color: #fff;
+  padding: 1.5rem 1rem;
+  border-right: 1px solid #e9ecef;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+}
+
+.sidebar nav ul li {
+  margin: 1rem 0;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #495057;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+  background-color: #e9f5ff;
+  color: #0366d6;
+}
+
+.sidebar nav ul li a i {
+  width: 20px;
+  text-align: center;
+}
+
+/* Main content area */
+main {
+  grid-area: main;
+  padding: 2rem;
+  overflow: auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+main h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.8rem;
+}
+
+/* Filter Styles */
+.filters {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+}
+
+.filters label {
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+#townFilter {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-right: 10px;
+  min-width: 200px;
+  background-color: #fff;
+}
+
+#townFilter:focus {
+  outline: none;
+  border-color: #0366d6;
+  box-shadow: 0 0 0 2px rgba(3, 102, 214, 0.2);
+}
+
+#clearFilter {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s;
+}
+
+#clearFilter:hover {
+  background-color: #c82333;
+}
+
+/* Table Styles */
+.table-container {
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#libraryTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+#libraryTable th,
+#libraryTable td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border: 1px solid #e9ecef;
+}
+
+#libraryTable th {
+  background-color: #34495e;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+#libraryTable tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+#libraryTable tr:hover {
+  background-color: #e9f5ff;
+}
+
+/* Map container */
+.map-container {
+  width: 100%;
+  height: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .wrapper {
+    grid-template-columns: 180px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main";
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e9ecef;
+  }
+  main {
+    margin: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #townFilter {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* State styles */
+/*The fading highlight effect helps users locate their searched item without permanent visual noise */
+.highlighted {
+  background-color: #fff3cd !important;
+  transition: background-color 0.3s ease;
+}
+
+.fade-out {
+  transition: background-color 1.5s ease;
+  background-color: transparent !important;
+}
+
+#libraryTable tbody tr td:first-child {
+  white-space: nowrap;
+}
+
+.view-on-map {
+  color: #0366d6;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.view-on-map:hover {
+  text-decoration: underline;
+}
+
+/* Search styles */
+.search-container {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.7rem 1rem 0.7rem 2.5rem;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #0366d6;
+  box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.25);
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+/* Active link styling */
+.active {
+  font-weight: bold;
+  background-color: #e9f5ff;
+  color: #0366d6;
+}
+
+/* Sorting button styles */
+.sort-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0;
+}
+
+.sort-btn:hover {
+  color: #a0c4ff;
+}
+
+/* Find Nearest button */
+#findNearest {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s;
+}
+
+#findNearest:hover {
+  background-color: #218838;
+}
+
+/* Distance column */
+#libraryTable td:nth-child(8) {
+  white-space: nowrap;
+}
