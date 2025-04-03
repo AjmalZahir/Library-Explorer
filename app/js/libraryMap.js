@@ -10,7 +10,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
 
-/// Function to fetch libraries from the API
+/// Function to display library markers on the map with popups
 function showLibrariesOnMap(libraries, highlightedLibraryName, map) {
   libraries.forEach((library) => {
     const coords = library.geometry.coordinates;
@@ -79,7 +79,7 @@ const highlightedLibraryName = decodeURIComponent(
 );
 
 fetchLibraries().then((libraries) => {
-  if (highlightedLibraryName) {
+  if (highlightedLibraryName) { // If a specific library is requested, center the map on it
     const library = libraries.find(
       (lib) => lib.properties.NAME === highlightedLibraryName
     );
