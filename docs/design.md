@@ -18,7 +18,7 @@ _Table view with search and filtering capabilities_
 _Map view with clustered markers and popup details_
 
 ### Wireframe
-![Library Wireframe](images/wireframe.png)
+![Library Wireframe](images/Wireframe.png)
 _Basic structure of the UI layout_
 
 ## Visual Design
