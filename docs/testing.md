@@ -1,6 +1,7 @@
 # Testing
 
 ## Test Plan
+<!-- Tests are contributed by the person responsible for the corresponding Use Case and Code files -->
 
 ### Manual Tests (UAT)
 
