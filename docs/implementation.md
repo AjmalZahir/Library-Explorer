@@ -72,7 +72,7 @@ The system will be hosted as a web application with a client-server model. The d
 ## Bristol Open Data API
 
 ### Query: Fetch All Libraries
-
+<!-- Contributor:  M Z M Ajmal -->
 #### URL
 
 ```
@@ -109,7 +109,7 @@ https://maps2.bristol.gov.uk/server2/rest/services/ext/ll_leisure_and_culture/Ma
   ]
 }
 ```
-
+<!-- Contributor:  M Z M Ajmal -->
 ![Library Explorer Class Diagram Here](images/class1.png)
 
 # User Guide
