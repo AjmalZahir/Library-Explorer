@@ -4,9 +4,11 @@
 
 ### User Stories
 
-- As a **user**, I want to browse libraries so that I can see a list of library details such as name, location, services, and more.
-- As a **user**, I want to view libraries on a map so that I can visually find the locations of libraries near me.
-- As a **user**, I want to filter libraries based on specific attributes like location or service types, so I can easily find the libraries that best suit my needs.
+- As a **user**, I want to **search for a library by name, street, town, or postcode**, so that I can quickly find the library I am looking for.
+- As a **user**, I want to **sort the library list by name, town, or distance**, so that I can easily organize the information based on my preference.
+- As a **user**, I want to **find the nearest library based on my current location**, so that I can visit the closest one conveniently.
+- As a **user**, I want to **view a library’s location on a map**, so that I can get directions and understand its surroundings.
+- As a **user**, I want to **filter libraries by town**, so that I can see only the libraries in a specific area.
 
 ### Actors
 
