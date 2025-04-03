@@ -14,7 +14,7 @@ Each link leads to detailed documentation.
 
 ## Contributors
 
-- Ajmal Zahir / m67-mohamedzah: Implemented the map and the find nearest function.
-- Rishon: Implemented the table.
+- **Ajmal Zahir / m67-mohamedzah**: Implemented the map and the find nearest function.
+- **Rishon**: Implemented the table.
 
 All contributions, including other contributions, are commented in relevant files.
