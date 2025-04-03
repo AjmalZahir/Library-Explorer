@@ -17,6 +17,10 @@ _Table view with search and filtering capabilities_
 ![Library Map Design](images/map1.png)
 _Map view with clustered markers and popup details_
 
+### Wireframe
+![Library Wireframe](images/wireframe.png)
+_Basic structure of the UI layout_
+
 ## Visual Design
 
 ### Color Scheme
