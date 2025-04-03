@@ -4,11 +4,11 @@ Library Explorer is a web application that helps users locate libraries in Brist
 
 ## Documentation
 
-1. **Planning** - Outlines project goals, timeline, and resources needed.  
-2. **Requirements** - Lists what the system must do for users.  
-3. **Design** - Defines how the system will look and work.  
-4. **Implementation** - Covers building and coding the system.  
-5. **Testing** - Checks if everything works correctly.  
+1. [Planning](docs/planning.md) - Outlines project goals, timeline, and resources needed. 
+2. [Requirements](docs/requirements.md) - Lists what the system must do for users.
+3. [Design](docs/design.md) - Defines how the system will look and work.
+4. [Implementation](docs/implementation.md) - Covers building and coding the system.
+5. [Testing](docs/testing.md) - Checks if everything works correctly.
 
 Each link leads to detailed documentation.
 
