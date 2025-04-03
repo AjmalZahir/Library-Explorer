@@ -81,108 +81,30 @@
 
 ## Use Case Model: Library List
 
-**Use Case Name:** View and Interact with Library List
-
-**Actor:** User
-
-**Goal:** To view a list of libraries, search for specific libraries, filter by town, and navigate to the map view for a selected library.
-
-**Preconditions:**
-
-1.  The user has navigated to the "Library List" page.
-2.  The application has successfully fetched and loaded the library data.
-
-**Postconditions (Success Scenario):**
-
-1.  A table displaying the list of libraries with their details (Name, Street, Town, Postcode, Telephone, Email, URL, Actions) is presented to the user.
-
-**Main Flow:**
-
-1.  The user navigates to the "Library List" page.
-2.  The application fetches and displays the list of libraries in a tabular format.
-3.  The user can see the name, street, town, postcode, telephone, email, and website URL for each library.
-4.  The user can see a "View on map" link for each library.
-
-**Alternative Flows:**
-
-- **Search for Libraries:**
-  1.  The user enters a search term in the "Search libraries..." input field.
-  2.  The application filters the library list in real-time based on the entered search term, matching against the library name, street, town, or postcode.
-  3.  The updated list of matching libraries is displayed.
-- **Filter by Town:**
-  1.  The user selects a town from the "Filter by Town" dropdown.
-  2.  The application filters the library list to show only libraries located in the selected town.
-  3.  The updated list of libraries in the chosen town is displayed.
-- **Clear Filter:**
-  1.  The user clicks the "Clear Filter" button.
-  2.  The application resets the search input and the town filter.
-  3.  The complete list of libraries is displayed.
-- **View Library on Map:**
-  1.  The user clicks the "View on map" link next to a specific library.
-  2.  The application navigates the user to the "Library Map" page, highlighting the selected library on the map.
-
-**Exception Flows:**
-
-- **No Libraries Found:** If no libraries are found based on the search or filter criteria, a "No libraries found" message is displayed in the table.
-- **Error Fetching Data:** If there is an error while fetching the library data, an appropriate error message is displayed to the user (though not explicitly handled in the provided code).
-
-**Trigger:** The user navigates to the "Library List" page or interacts with the search or filter functionalities.
-
-**Priority:** High
-
-**Frequency:** Frequent
-
----
+| **Use Case Model**    | **Library List**               |
+|-----------------------|--------------------------------|
+| **Use Case Name**      | View and Interact with Library List |
+| **Actor**              | User                           |
+| **Goal**               | To view a list of libraries, search for specific libraries, filter by town, and navigate to the map view for a selected library. |
+| **Preconditions**      | 1. The user has navigated to the "Library List" page. <br> 2. The application has successfully fetched and loaded the library data. |
+| **Postconditions**     | 1. A table displaying the list of libraries with their details (Name, Street, Town, Postcode, Telephone, Email, URL, Actions) is presented to the user. |
+| **Main Flow**          | 1. The user navigates to the "Library List" page. <br> 2. The application fetches and displays the list of libraries in a tabular format. <br> 3. The user can see the name, street, town, postcode, telephone, email, and website URL for each library. <br> 4. The user can see a "View on map" link for each library. |
+| **Alternative Flows**  | **Search for Libraries:** The user enters a search term, and the list is filtered in real-time. <br> **Filter by Town:** The user selects a town, and the list shows libraries in that town. <br> **Clear Filter:** The user resets the search and filter. <br> **View Library on Map:** The user clicks the "View on map" link for a library to navigate to the map page. |
+| **Exception Flows**    | **No Libraries Found:** A "No libraries found" message is displayed. <br> **Error Fetching Data:** An error message is displayed if data fetching fails. |
+| **Trigger**            | The user navigates to the "Library List" page or interacts with the search/filter functionalities. |
 
 <!-- Contributor:  M Z M Ajmal -->
 
 ## Use Case Model: Library Map
 
-**Use Case Name:** View Library Locations on Map
-
-**Actor:** User
-
-**Goal:** To view the locations of libraries on an interactive map and see details of specific libraries.
-
-**Preconditions:**
-
-1.  The user has navigated to the "Library Map" page.
-2.  The Leaflet map library has been successfully loaded and initialized.
-3.  The application has successfully fetched and loaded the library data.
-
-**Postconditions (Success Scenario):**
-
-1.  An interactive map is displayed, centered on the user's location (if geolocation is successful) or a default location (Bristol).
-2.  Markers are displayed on the map, each representing a library location.
-
-**Main Flow:**
-
-1.  The user navigates to the "Library Map" page.
-2.  The application attempts to get the user's current location using geolocation.
-3.  If geolocation is successful, the map is centered on the user's location.
-4.  If geolocation fails or is not supported, the map is centered on a default location (Bristol).
-5.  The application fetches the library data.
-6.  For each library, a marker is placed on the map at its corresponding coordinates.
-7.  Clicking on a marker opens a popup displaying the library's name and address, along with a link to "View in table" which navigates to the Library List page with the corresponding library highlighted.
-
-**Alternative Flows:**
-
-- **View Specific Library from List:**
-  1.  The user navigates to the "Library Map" page via the "View on map" link from the "Library List" page.
-  2.  The map is centered on the location of the selected library.
-  3.  The marker for the selected library is automatically opened, displaying its details.
-- **Geolocation Not Supported/Failed:**
-  1.  The user navigates to the "Library Map" page.
-  2.  The application attempts to get the user's location but fails or geolocation is not supported.
-  3.  The map is centered on the default location (Bristol).
-  4.  An alert message may be displayed to the user indicating that their location could not be determined.
-
-**Exception Flows:**
-
-- **Error Fetching Data:** If there is an error while fetching the library data, the map might load without any library markers, or an error message might be displayed (though not explicitly handled in the provided code).
-
-**Trigger:** The user navigates to the "Library Map" page or clicks "View on map" from the Library List.
-
-**Priority:** High
-
-**Frequency:** Moderate
+| **Use Case Model**    | **Library Map**                |
+|-----------------------|--------------------------------|
+| **Use Case Name**      | View Library Locations on Map  |
+| **Actor**              | User                           |
+| **Goal**               | To view the locations of libraries on an interactive map and see details of specific libraries. |
+| **Preconditions**      | 1. The user has navigated to the "Library Map" page. <br> 2. The Leaflet map library has been successfully loaded. <br> 3. The application has successfully fetched and loaded the library data. |
+| **Postconditions**     | 1. An interactive map is displayed, centered on the user's location or Bristol. <br> 2. Markers are displayed for each library. |
+| **Main Flow**          | 1. The user navigates to the "Library Map" page. <br> 2. The application fetches the library data and displays markers for each library. <br> 3. Clicking on a marker displays the library's details. |
+| **Alternative Flows**  | **View Specific Library from List:** The user navigates from the "Library List" page and sees the selected library's details. <br> **Geolocation Not Supported/Failed:** The map centers on Bristol if geolocation fails. |
+| **Exception Flows**    | **Error Fetching Data:** An error message or an empty map may be shown if data fetching fails. |
+| **Trigger**            | The user navigates to the "Library Map" page or clicks "View on map" from the Library List. |
