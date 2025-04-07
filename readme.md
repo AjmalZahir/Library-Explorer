@@ -12,6 +12,14 @@ Library Explorer is a web application that helps users locate libraries in Brist
 
 Each link leads to detailed documentation.
 
+## How to run the code
+
+1. Download the Zip file of the project from GitHub
+2. Open the Project folder through VS Code
+3. Install Live Server in VS Code (Extension -> Search and install Live Server)
+4. Open the main HTML file LibraryList.html
+5. Right-click on it and click "Open with Live Server"
+
 ## Contributors
 
 - **Ajmal Zahir / m67-mohamedzah**: Implemented the map and the find nearest function.
